@@ -20,4 +20,12 @@
     <?php get_template_part('/templates/hero'); ?>    <!-- l'entête hero image -->
 </section>
 
+<section>
+    <?php get_template_part('/templates/post-hero'); ?>    <!-- l'entête hero image -->
+</section>
+
+<section>
+    <?php get_template_part('templates/competence'); ?>
+</section>
+
 <?php get_footer(); ?>

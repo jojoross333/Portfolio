@@ -1,13 +1,18 @@
 <section class="hero">
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/image-hero.png" class="hero-img" alt="Image Hero">
-
-    <div class="clouds">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/nuage-1.png" class="cloud cloud1" alt="Nuage">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/nuage-1.png" class="cloud cloud2" alt="Nuage">
+  <div class="hero-content">
+    <div class="content-text">
+      <p>Hello there! I'm -</p>
+      <h1>Développeur WordPress</h1>
+      <p>Passionné par le web, je conçois des sites modernes et performants en utilisant WordPress et les meilleures pratiques du développement.</p>
     </div>
 
-    <div class="hero-content">
-        <h1 class="fade-in-title">Bienvenue sur mon Portfolio</h1>
-        <p>Développeur WordPress | Création et optimisation de sites web</p>
+    <div class="social-links">
+      <a href="https://github.com/ton-compte" target="_blank" class="social-link">Github</a>
+      <a href="https://www.linkedin.com/in/ton-compte" target="_blank" class="social-link">LinkedIn</a>
+      <a href="mailto:ton-email@example.com" class="social-link">Email</a>
     </div>
+  </div>
+  <div class="profile-image">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/jo.png" alt="Ton Profil">
+  </div>
 </section>

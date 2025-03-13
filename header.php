@@ -23,11 +23,12 @@
 </head>
 
 <body>
+<main>
     <header>
         <div class="header_content">
             <div class="logo">
                 <a href="<?php echo home_url( '/' ); ?>" aria-label="page d'accueil">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/jo_dev_logo.png" alt="Logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/jologo.png" alt="Logo">
                 </a>
             </div>
         </div>
@@ -36,4 +37,4 @@
             <?php wp_nav_menu(array('theme_location' => 'header')); ?>
         </nav>
     </header>
-    <main>
+    
