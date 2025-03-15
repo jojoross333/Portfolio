@@ -16,16 +16,20 @@
 
 <?php get_header(); ?>   <!-- le header -->
 
-<section>
+<section id="hero">
     <?php get_template_part('/templates/hero'); ?>    <!-- l'entête hero image -->
 </section>
 
-<section>
-    <?php get_template_part('/templates/post-hero'); ?>    <!-- l'entête hero image -->
+<section id="about">
+    <?php get_template_part('/templates/about-me'); ?>    <!-- l'entête hero image -->
 </section>
 
-<section>
+<section id="competence">
     <?php get_template_part('templates/competence'); ?>
+</section>
+
+<section id="projets">
+    <?php get_template_part('templates/projet'); ?>
 </section>
 
 <?php get_footer(); ?>

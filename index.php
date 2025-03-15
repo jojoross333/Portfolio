@@ -13,13 +13,6 @@
  */
 
 ?>
-<?php
-// inclut le header (en tête de page)
-get_header();
-?>
+<?php get_header(); ?>   <!-- le header -->
 
-<?php
-//inclut le footer
-get_footer();
-?>
-
+<?php get_footer(); ?>

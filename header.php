@@ -18,7 +18,7 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
@@ -28,7 +28,7 @@
         <div class="header_content">
             <div class="logo">
                 <a href="<?php echo home_url( '/' ); ?>" aria-label="page d'accueil">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/jologo.png" alt="Logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-jo.png" alt="Logo">
                 </a>
             </div>
         </div>

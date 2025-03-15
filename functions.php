@@ -28,3 +28,17 @@ function porfolio_register_menus() {
     );
 }
 add_action( 'after_setup_theme', 'porfolio_register_menus' );
+
+function my_custom_post_type() {
+    $args = array(
+        'labels' => array(
+            'name' => 'Projets',
+            'singular_name' => 'Projet',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'supports' => array('title', 'editor', 'thumbnail'), // Ajoute 'thumbnail' ici pour activer l'image à la une
+    );
+    register_post_type('projet', $args);
+}
+add_action('init', 'my_custom_post_type');
