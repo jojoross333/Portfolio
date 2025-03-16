@@ -13,7 +13,7 @@
       <a href="https://www.linkedin.com/in/jojo-ross-770b2832b/" target="_blank" class="social-link">
         <i class="fab fa-linkedin"></i> <!-- Icône LinkedIn -->
       </a>
-      <a href="mailto:j.fracherossetti@icloud.com" class="social-link">
+      <a href="#" class="social-link" id="email-link">
         <i class="fas fa-envelope"></i> <!-- Icône Email -->
       </a>
     </div>

@@ -94,7 +94,7 @@ a:hover, .droit-footer:hover {
   text-decoration: underline;
 }
 
-/*FOOTER*/
+/*---________________FOOTER---________________*/
 
 .menu-footer {
   display: flex;
@@ -106,18 +106,43 @@ a:hover, .droit-footer:hover {
   border-top: 1px solid black;
   padding: 1px 0px 8px 0px;
 }
-  
+
 .menu-footer ul {
   display: flex;
   gap: 85px;
 }
+
+.menu-footer a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 400; 
+  transition: color 0.3s ease; 
+}
+
+.menu-footer a:hover {
+  color: #F56E28; /* Couleur orange au survol */
+}
+
+.droit-footer {
+  color: #000; 
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease; /* Transition fluide pour la couleur */
+}
+
+.droit-footer:hover {
+  color: #F56E28; /* Couleur orange au survol */
+  text-decoration: none; /* Retirer la ligne sous le texte au survol */
+
+}
+
 
 /*_____________HERO____________*/
 
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,6 +213,27 @@ a:hover, .droit-footer:hover {
   }
 }
 
+/*---responsive HERO---*/
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column; /* Changer la direction en colonne */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content-text {
+    width: 90%; /* Réduit la largeur du texte pour qu'il occupe tout l'espace sur mobile */
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 150px; /* Réduit la taille de l'image de profil sur mobile */
+    height: 150px;
+    margin: 0; /* Supprime la marge à gauche */
+  }
+}
+
 /*______---LIEN RÉSEAUX HERO---_____*/
 
 .social-links {
@@ -218,26 +264,77 @@ a:hover, .droit-footer:hover {
 }
 
 .about-me {
+  position: relative;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 200px;
+  justify-content: center; /* Centrer le contenu */
+  align-items: center; /* Centrer le contenu verticalement */
   width: 100%;
-  height: 50vh;
+  height: 60vh; /* Ajuster la hauteur pour ne pas dépasser */
+  padding: 20px; /* Ajout de padding */
 }
+
 
 .a-propos {
-  display: flex;
+  display: inline-block;
   font-size: 3em;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 20px;
+  opacity: 0; /* Initialement invisible */
+  width: 0; /* Initialement pas de largeur */
+  visibility: hidden; /* Complètement invisible */
+  border-right: none; /* Pas de curseur de machine à écrire au départ */
+  transition: opacity 0.3s ease, width 0.3s ease; /* Transition fluide */
 }
 
+.a-propos.animate {
+  visibility: visible; /* L'élément devient visible avec la classe 'animate' */
+  opacity: 1; /* Rendre l'élément visible */
+  width: auto; /* L'élément prend sa largeur normale */
+  animation: typing 3s steps(20) 1s 1 normal forwards; /* L'animation de la machine à écrire */
+}
 
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/*---RESPONSIVE A-PROPOS---*/
+
+@media (max-width: 768px) {
+  .about-me {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 0 15px; /* Moins de padding sur mobile */
+  }
+
+  .a-propos {
+    font-size: 2.5em; /* Réduire la taille du texte sur mobile */
+    margin-bottom: 10px;
+  }
+
+  /* Ajuster le contenu textuel pour mieux se présenter sur mobile */
+  .about-me p {
+    font-size: 1.2em; /* Réduire la taille du texte des paragraphes */
+    text-align: center; /* Centrer le texte sur mobile */
+  }
+}
 /*__________________PARTIE COMPETENCE__________*/
 
 .skills {
   text-align: center;
   padding: 80px 10%;
-  background: #ffffff;
   width: 100%;
   height: 50vh;
 }
@@ -246,7 +343,7 @@ a:hover, .droit-footer:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
+  gap: 80px;
 }
 
 .skill {
@@ -290,6 +387,38 @@ a:hover, .droit-footer:hover {
   transform: scale(1.1);
 }
 
+.fade-in-title {
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  margin-bottom: 50px;
+}
+
+/*---RESPONSIVE COMPETENCES---*/
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 50px 5%; /* Réduire le padding sur les petits écrans */
+  }
+
+  .skills-container {
+    gap: 20px; /* Espacement plus petit entre les éléments */
+  }
+
+  .skill {
+    width: 90px; /* Réduire la largeur des compétences sur mobile */
+    padding: 15px;
+  }
+
+  .skill img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fade-in-title {
+    font-size: 2.5em; /* Réduire la taille du titre */
+  }
+}
 
 /*---________________SECTION PROJET---____________*/
 
@@ -307,11 +436,17 @@ a:hover, .droit-footer:hover {
 .projet {
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 50px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'ombrage et la mise en volume */
+}
+
+.projet:hover {
+  transform: scale(1.05); /* Légère augmentation de la taille */
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25); /* Ombre plus marquée au survol */
 }
 
 #projets {
@@ -341,13 +476,29 @@ a:hover, .droit-footer:hover {
 
 .projet-thumbnail img {
   width: 100%;
-  height: 100%; /* L'image prend toute la hauteur du conteneur */
+  height: 90%; /* L'image prend toute la hauteur du conteneur */
   object-fit: cover; /* Assure que l'image couvre tout l'espace sans déformation */
 }
 
 .projet-contenu {
   padding: 20px;
 }
+
+/*---RESPONSIVE PROJET---*/
+
+@media (max-width: 768px) {
+  .projets-grid {
+    grid-template-columns: 1fr; /* Affiche une seule colonne sur mobile */
+    gap: 15px; /* Réduit l'espacement entre les projets sur mobile */
+  }
+
+  .projet {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/*---________PAGE PROJET---________*/
 
 .single-projet .projet-header {
   text-align: center;
@@ -368,7 +519,6 @@ a:hover, .droit-footer:hover {
 
 /*---_________MODALE DE CONTACT---____________*/
 
-/* Masquer la modale par défaut */
 .popup-overlay {
   position: fixed;
   width: 100%;
@@ -376,9 +526,18 @@ a:hover, .droit-footer:hover {
   display: none; /* Masque la modale au début */
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999; /* Augmenter le z-index pour être sûr que la modale est au-dessus */
   top: 0;
   left: 0;
+}
+
+form label {   /* style couleur texte label */
+  font-family: 'Poppins';
+  color: #000;
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  gap: 4px;
 }
 
 /* Rendre la modale visible quand on lui ajoute la classe visible */
@@ -389,27 +548,30 @@ a:hover, .droit-footer:hover {
 /* Style de la modale */
 .popup-contact {
   background: white;
-  width: 597px;
+  width: 90%; /* Plus large pour mobile */
+  max-width: 600px; /* Limite la largeur maximale */
   height: auto;
   overflow: auto;
   position: relative;
   border: 5px solid #000;
+  padding: 20px; /* Ajouter du padding pour espacer le contenu */
+  box-sizing: border-box;
 }
 
 /* Autres styles pour l'image, les champs, etc. */
 .popup-header {
+  display: flex;
+  justify-content: center;
   width: 100%;
   overflow: hidden;
 }
 
 .popup-img {
-  width: 886px;
-  height: 106px;
-  margin: 18px -145px 46px -141px;
+  width: 120px; /* Taille légèrement agrandie */
 }
 
 .popup-details {
-  width: 263px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -417,23 +579,213 @@ a:hover, .droit-footer:hover {
   width: 100%;
   border-radius: 8px;
   border: 1px solid #B8BBC2;
+  padding: 10px;
+  margin-bottom: 10px;
 }
-
+/*bouton contact*/
 .wpcf7-submit {
   width: 100%;
   background: #D8D8D8;
   border: transparent;
+  padding: 10px;
+  cursor: pointer;
 }
+
+.wpcf7-submit:hover {
+  background: #F56E28; /* Orange */
+}
+
+/* Style du bouton de fermeture */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #F56E28;  /* Orange */
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Effet au survol */
+.close-btn:hover {
+  background-color: #e64a19;  /* Fond orange plus foncé */
+  transform: scale(1.2); /* Agrandissement au survol */
+}
+
+.close-btn:focus {
+  outline: none; /* Évite le contour bleu au focus */
+}
+
 
 @media (max-width: 768px) {
   .popup-contact {
     width: 90%;
+    padding: 15px;
   }
+
   .popup-img {
     width: 100%;
   }
+
   .popup-details {
     width: 100%;
     padding: 0 10px;
+  }
+}
+
+/*---________MENU BURGER---_________*/
+
+.burger-menu {
+  display: none; /* Masqué par défaut */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.burger-menu span {
+  display: block;
+  height: 2px;
+  background-color: #000000;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+  opacity: 0;  /* Cache la deuxième ligne */
+}
+
+.burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  /* Burger Menu Position */
+  .burger-menu {
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    gap: 6px;
+    z-index: 100;
+  }
+
+  header {
+    padding: 0 20px;
+  }
+
+  /* Le menu qui occupe toute la hauteur */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #F56E28; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 5;
+  }
+
+  /* Affichage du menu quand la classe active est ajoutée */
+  .main-nav.active {
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+  }
+
+  .main-nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  .main-nav ul li a:hover {
+    color: #e0e0e0; /* Légère modification de la couleur au survol */
+  }
+}
+
+/* ___________LE CUBE____________*/
+
+.cube-container {
+  position: absolute;
+  top: 75%; /* Positionne le cube dans la section */
+  left: 5%; 
+  width: 200px; /* Taille du cube */
+  height: 200px;
+  perspective: 500px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.cube {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotateCube 10s infinite linear; /* Animation infinie */
+  transition: transform 0.1s ease-out; 
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 165, 0, 0.8); 
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face i {
+  font-size: 40px;  /* Ajuste la taille des icônes */
+  color: white;
+}
+
+.front  { transform: translateZ(75px); }
+.back   { transform: rotateY(180deg) translateZ(75px); }
+.left   { transform: rotateY(-90deg) translateZ(75px); }
+.right  { transform: rotateY(90deg) translateZ(75px); }
+.top    { transform: rotateX(90deg) translateZ(75px); }
+.bottom { transform: rotateX(-90deg) translateZ(75px); }
+
+@keyframes rotateCube {
+  0%   { transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg); }
+  25%  { transform: rotateY(90deg) rotateX(45deg) rotateZ(45deg); }
+  50%  { transform: rotateY(180deg) rotateX(90deg) rotateZ(90deg); }
+  75%  { transform: rotateY(270deg) rotateX(135deg) rotateZ(135deg); }
+  100% { transform: rotateY(360deg) rotateX(180deg) rotateZ(180deg); }
+}
+
+@media (max-width: 768px) {
+  .cube-container {
+      display: none; /* Masque le cube sur les petits écrans */
   }
 }

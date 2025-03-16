@@ -2,7 +2,8 @@
 <div id="modale" class="popup-overlay">
     <div class="popup-contact">
         <div class="popup-header">
-            <img class="popup-img" src="<?php echo get_theme_file_uri("/assets/img/contact-header.png"); ?>" alt="Contact Image">
+            <button id="close-btn" class="close-btn">×</button>
+            <img class="popup-img" src="<?php echo get_theme_file_uri("/assets/img/blogo-jo.png"); ?>" alt="Contact Image">
         </div>
         <div class="popup-details">
             <!-- Formulaire de contact -->
