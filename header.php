@@ -22,7 +22,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body id="top">
 <main>
     <header>
         <div class="header_content">

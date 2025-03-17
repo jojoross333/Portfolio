@@ -8,15 +8,23 @@
  */
 
  function porfolio_scripts() {
-    // Chargement du thème
+    // Chargement du style du thème
     wp_enqueue_style('porfolio-style', get_template_directory_uri() . '/assets/css/theme.css', array(), 1.1);
-    //chargement de scripts.js
-    wp_enqueue_script('fade-in-text', get_template_directory_uri() . '/assets/js/scripts.js', array(), null, true);
     
+    // Chargement des scripts JavaScript
+    wp_enqueue_script('jquery');  // Charger jQuery
+
+    // Charger chaque fichier JS
+    wp_enqueue_script('fade-in-text', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), null, true);
+    wp_enqueue_script('burger', get_template_directory_uri() . '/assets/js/burger.js', array('jquery'), null, true);
+    wp_enqueue_script('cube', get_template_directory_uri() . '/assets/js/cube.js', array('jquery'), null, true);
+    wp_enqueue_script('formulaire', get_template_directory_uri() . '/assets/js/formulaire.js', array('jquery'), null, true);
+    wp_enqueue_script('lightbox', get_template_directory_uri() . '/assets/js/lightbox.js', array('jquery'), null, true);
 }
+add_action('wp_enqueue_scripts', 'porfolio_scripts');
+
 
 // j'enregistre le menu personnalisé 
-add_action('wp_enqueue_scripts', 'porfolio_scripts');
 
 function porfolio_register_menus() {
     // Enregistrement du menu 

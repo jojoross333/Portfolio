@@ -31,5 +31,9 @@
 <section id="projets">
     <?php get_template_part('templates/projet'); ?>
 </section>
+<!-- Flèche de retour en haut -->
+<a href="#top" id="scroll-to-top" class="scroll-to-top">
+  <i class="fas fa-arrow-up"></i> <!-- Icone de la flèche (Font Awesome) -->
+</a>
 
 <?php get_footer(); ?>

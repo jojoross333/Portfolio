@@ -23,6 +23,8 @@
 
     <?php get_template_part('templates/modale'); ?>
 
+    <?php get_template_part('templates/lightbox'); ?>
+
     <?php wp_footer(); ?>
     
 </body>

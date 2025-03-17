@@ -2,8 +2,8 @@
   <div class="hero-content">
     <div class="content-text">
       <p>Hello there! I'm -</p>
-      <h1><span class="word-left">Développeur</span> <span class="word-right">WordPress</span></h1>
-      <p>Passionné par le web, je conçois des sites modernes et performants en utilisant WordPress et les meilleures pratiques du développement.</p>
+      <h1><span class="word-left">Jonathan</span> <span class="word-right">Rossetti</span></h1>
+      <p>Développeur WordPress passionné, spécialisé dans la création de sites personnalisés, le green code et les bonnes pratiques SEO.</p>
     </div>
 
     <div class="social-links">
@@ -20,5 +20,6 @@
   </div>
   <div class="profile-image">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/jo.png" alt="Ton Profil">
+    <h2><span class="word-left">freelance</span> <span class="word-right">wordpress</span></h2>
   </div>
 </section>
