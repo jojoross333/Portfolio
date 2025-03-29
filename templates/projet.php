@@ -13,6 +13,7 @@
                 $description = get_field('description'); // Description du projet
                 $github = get_field('github'); // Lien GitHub
                 $contexte = get_field('contexte'); // Champ personnalisé "Contexte"
+                $site_web = get_field('site-web'); // Champ personnalisé "site-web" pour le lien vers le site
                 ?>
                 <div class="projet">
                     <h2><?php the_title(); ?></h2>
@@ -20,8 +21,17 @@
                         <?php the_post_thumbnail('large'); ?>
                     </div>
                     <div class="projet-overlay">
-                        <a href="#" class="btn-en-savoir-plus" data-description="<?php echo esc_attr($description); ?>" data-contexte="<?php echo esc_attr($contexte); ?>" data-github="<?php echo esc_url($github); ?>">En savoir plus</a>
+                        <!-- Bouton "En savoir plus" avec données supplémentaires -->
+                        <a href="#" class="btn-en-savoir-plus" 
+                           data-description="<?php echo esc_attr($description); ?>" 
+                           data-contexte="<?php echo esc_attr($contexte); ?>" 
+                           data-github="<?php echo esc_url($github); ?>" 
+                           data-site-web="<?php echo esc_url($site_web); ?>">En savoir plus</a>
+                        
+                        <!-- Lien GitHub -->
                         <a href="<?php echo esc_url($github); ?>" target="_blank" class="btn-github">GitHub</a>
+                        
+    
                     </div>
                 </div>
                 <?php
@@ -31,6 +41,7 @@
         ?>
     </div>
 </section>
+
 
 
 <!-- Template part pour la lightbox -->

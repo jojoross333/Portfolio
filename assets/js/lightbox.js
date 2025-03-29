@@ -7,12 +7,14 @@ jQuery(document).ready(function($) {
 
         var description = $(this).data('description'); // Récupère la description du projet
         var github = $(this).data('github'); // Récupère le lien GitHub
-        var contexte = $(this).data('contexte'); // Récupère le contexte du projet (ajouté ici)
+        var contexte = $(this).data('contexte'); // Récupère le contexte du projet
+        var siteWeb = $(this).data('site-web'); // Récupère le lien site-web
 
         // Mettre à jour le contenu de la lightbox avec la description, le contexte et le lien
         $('#lightbox-description').text(description);
-        $('#lightbox-contexte').text(contexte); // Ajout du contexte ici
+        $('#lightbox-contexte').text(contexte);
         $('#lightbox-github-link').attr('href', github);
+        $('#lightbox-site-link').attr('href', siteWeb); // Ajout du lien site web dans la lightbox
 
         // Afficher la lightbox
         $('#lightbox').fadeIn();

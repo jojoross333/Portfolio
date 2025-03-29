@@ -50,13 +50,13 @@ header {
 
 /* LOGO */
 .logo img {
-  width: 120px; /* Taille légèrement agrandie */
+  width: 120px; 
   transition: transform 0.3s ease;
   border-radius: 50%;
 }
 
 .logo img:hover {
-  transform: scale(1.1); /* Effet subtil au survol */
+  transform: scale(1.1); 
 }
 
 /* POLICE PARAGRAPHE ET TITRE */
@@ -120,41 +120,41 @@ a:hover, .droit-footer:hover {
 }
 
 .menu-footer a:hover {
-  color: #F56E28; /* Couleur orange au survol */
+  color: #F56E28; 
 }
 
 .droit-footer {
   color: #ffffff; 
   font-size: 1rem;
   font-weight: 400;
-  transition: color 0.3s ease; /* Transition fluide pour la couleur */
+  transition: color 0.3s ease; 
 }
 
 .droit-footer:hover {
-  color: #F56E28; /* Couleur orange au survol */
-  text-decoration: none; /* Retirer la ligne sous le texte au survol */
+  color: #F56E28; 
+  text-decoration: none; 
 
 }
 
 @media (max-width: 768px) {
   .menu-footer {
-    flex-direction: column; /* Empiler les éléments */
-    align-items: center; /* Centrer les éléments */
-    gap: 20px; /* Réduire l'espace entre les éléments */
-    height: auto; /* Laisser la hauteur s'adapter à son contenu */
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px; 
+    height: auto; 
   }
 
   .menu-footer ul {
-    flex-direction: column; /* Empiler les éléments de la liste */
-    gap: 15px; /* Réduire l'espace entre les liens */
+    flex-direction: column;
+    gap: 15px; 
   }
 
   .menu-footer a {
-    font-size: 14px; /* Réduire la taille de la police sur les petits écrans */
+    font-size: 14px; 
   }
 
   .droit-footer {
-    font-size: 14px; /* Réduire la taille de la police sur les petits écrans */
+    font-size: 14px; 
   }
 }
 /*_____________HERO____________*/
@@ -162,7 +162,7 @@ a:hover, .droit-footer:hover {
 .hero {
   position: relative;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -183,15 +183,52 @@ a:hover, .droit-footer:hover {
   margin-bottom: 20px;
 }
 
+/* ---___RECTANGLE DES SECTIONS---_____*/
+
 .content-text::before {
   content: ''; /* Nécessaire pour générer l'élément */
   position: absolute;
-  width: 70%; 
+  width: 80%; 
   height: 100%;
   background-color: #F56E28;
-  border-radius: 5px; 
+  border-radius: 10px; 
   z-index: -1;
+  top: -20px; 
+  left: -20px; 
+  padding: 20px;
+  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.4); 
 }
+
+.rectangle1::before {
+  content: '';
+  position: absolute;
+  width: 35%; 
+  height: 20%;
+  background-color: rgba(255, 165, 0, 0.5);
+  z-index: -1;
+  border-radius: 10px;
+  top: -15px; 
+  left: -15px;
+  padding: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Ombre réduite */ 
+}
+
+/* Rectangle orange pour la section "Mes compétences" */
+.rectangle2::before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 70%; 
+  background: linear-gradient(90deg, rgba(255, 183, 77, 0.6), rgba(245, 110, 40, 0.6));
+  z-index: -1;
+  border-radius: 10px; 
+  top: -15px;
+  left: 30px; 
+  padding: 20px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* fin rectangle*/
 
 .profile-image {
   display: flex;
@@ -231,7 +268,7 @@ a:hover, .droit-footer:hover {
   opacity: 0;
   transform: translateX(100%);
   animation: slideRight 1s forwards;
-  animation-delay: 0.3s; /* Delay pour le mot WordPress */
+  animation-delay: 0.3s;
 }
 
 /* Keyframe pour l'animation du mot venant de la gauche */
@@ -254,20 +291,24 @@ a:hover, .droit-footer:hover {
 
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column; /* Changer la direction en colonne */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
   }
 
   .content-text {
-    width: 90%; /* Réduit la largeur du texte pour qu'il occupe tout l'espace sur mobile */
+    width: 90%; 
     text-align: center;
   }
 
+  .content-text h2 {
+    font-size: 2em;
+  }
+
   .profile-image img {
-    width: 150px; /* Réduit la taille de l'image de profil sur mobile */
+    width: 150px;
     height: 150px;
-    margin: 0; /* Supprime la marge à gauche */
+    margin: 0; 
   }
 }
 
@@ -277,6 +318,9 @@ a:hover, .droit-footer:hover {
   display: flex;
   justify-content: center;
   gap: 20px; 
+  z-index: 2; 
+  position: relative; 
+  margin-top: 20px; 
 }
 
 .social-link i {
@@ -286,36 +330,41 @@ a:hover, .droit-footer:hover {
 }
 
 .social-link i:hover {
-  color: #F56E28; /* Change la couleur au survol (orange, par exemple) */
+  color: #F56E28; 
+  transform: scale(1.2); /* Agrandissement de 10% */
+  transition: transform 0.3s ease; 
 }
 
 /*__________________ABOUT-ME SECTION_____________________*/
 
 /* Applique la couleur noire à tous les h2 et p dans la section .about-me */
 .about-me p {
-  color: #000000; /* Texte en noir */
+  color: #000000;  
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1em, 1.5vw, 1.8em);
+  font-size: 1.8em;
 }
 
 .about-me strong {
-  color: #F56E28; /* Garde une couleur différente pour le texte en gras */
+  color: #F56E28;
 }
 
 .about-me {
   position: relative;
-  background-color: #e5f3f8; 
+  background-color: #eaf0f3; 
   display: flex;
-  justify-content: center; /* Centrer le contenu */
-  align-items: center; /* Centrer le contenu verticalement */
+  justify-content: center; 
+  align-items: center; 
   width: 100%;
-  height: 60vh; /* Ajuster la hauteur pour ne pas dépasser */
-  padding: 20px; /* Ajout de padding */
+  height: 80vh; 
+  padding: 30px; 
 }
+/*------EFFET FADE IN DES TITRE-------*/
 
-.a-propos {
+/* Titre initialement caché */
+.fade-in-title {
   display: inline-block;
   font-family: 'Space Mono', monospace;
+  color: #3cbcec;
   font-size: 3em;
   white-space: nowrap;
   overflow: hidden;
@@ -324,16 +373,18 @@ a:hover, .droit-footer:hover {
   width: 0; /* Initialement pas de largeur */
   visibility: hidden; /* Complètement invisible */
   border-right: none; /* Pas de curseur de machine à écrire au départ */
-  transition: opacity 0.3s ease, width 0.3s ease; /* Transition fluide */
+  transition: opacity 1.8s ease, width 1.8s ease; /* Transition fluide */
 }
 
-.a-propos.animate {
+/* Lorsque la classe .animate est ajoutée, on fait apparaître le texte */
+.fade-in-title.animate {
   visibility: visible; /* L'élément devient visible avec la classe 'animate' */
   opacity: 1; /* Rendre l'élément visible */
   width: auto; /* L'élément prend sa largeur normale */
   animation: typing 3s steps(20) 1s 1 normal forwards; /* L'animation de la machine à écrire */
 }
 
+/* Animation de la machine à écrire */
 @keyframes typing {
   from {
     width: 0;
@@ -343,11 +394,7 @@ a:hover, .droit-footer:hover {
   }
 }
 
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
-}
+
 
 /*---RESPONSIVE A-PROPOS---*/
 
@@ -356,39 +403,33 @@ a:hover, .droit-footer:hover {
     display: flex;
     justify-content: center;
     height: auto;
-    padding: 0 15px; /* Moins de padding sur mobile */
+    padding: 0 15px; 
   }
 
   .a-propos {
-    font-size: 2.5em; /* Réduire la taille du texte sur mobile */
+    font-size: 2.5em; 
     margin-bottom: 10px;
   }
 
-  /* Ajuster le contenu textuel pour mieux se présenter sur mobile */
+  
   .about-me p {
-    font-size: 1.2em; /* Réduire la taille du texte des paragraphes */
-    text-align: center; /* Centrer le texte sur mobile */
+    font-size: 1.2em; 
+    text-align: center; 
   }
 }
 /*__________________PARTIE COMPETENCE__________*/
 
-.fade-in-title {
-  font-size: 3em;
-  font-weight: 800;
-  margin-bottom: 30px;
-  font-family: 'Space Mono', monospace;
-}
-
 .skills {
   padding: 80px 10%;
   text-align: center;
-  background-color: #e5f3f8;
+  background-color: #eaf0f3;
 }
 
 .skills-container {
   display: flex;
-  gap: 80px;
-  flex-wrap: wrap; /* Permet de tout aligner en colonne sur mobile */
+  justify-content: center;
+  gap: 70px;
+  flex-wrap: wrap;
 }
 
 .cube-section {
@@ -403,10 +444,11 @@ a:hover, .droit-footer:hover {
   justify-content: center;
   align-items: center;
 }
+
 .text-section p {
-  color: #000000;  /* Assure que la couleur du texte reste noire */
+  color: #000000;  
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(1em, 1.5vw, 1.8em);
+  font-size: 1.8em;
 }
 
 .toolbox-section {
@@ -479,7 +521,7 @@ a:hover, .droit-footer:hover {
   }
 
   .cube-section, .toolbox-section {
-    max-width: 100%; /* Prend toute la largeur sur mobile */
+    max-width: 100%; 
   }
 
   .text-section {
@@ -487,11 +529,11 @@ a:hover, .droit-footer:hover {
   }
 
   .toolbox-section .skills-container {
-    flex-direction: column; /* Les icônes se superposent verticalement */
+    flex-direction: column; 
   }
 
   .toolbox-section .skill {
-    width: 100px; /* Largeur plus grande sur mobile */
+    width: 100px;
   }
 }
 
@@ -499,8 +541,9 @@ a:hover, .droit-footer:hover {
 /*---________________SECTION PROJET---____________*/
 
 #projets {
-  padding: 40px 0;
   background-color: #0b475f;
+  padding: 40px 0;
+  text-align: center; 
 }
 
 .projets-grid {
@@ -517,21 +560,16 @@ a:hover, .droit-footer:hover {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 50px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition pour l'ombrage et la mise en volume */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .projet:hover {
-  transform: scale(1.05); /* Légère augmentation de la taille */
-  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25); /* Ombre plus marquée au survol */
-}
-
-#projets {
-  padding: 40px 0;
-  text-align: center; /* Centre le titre */
+  transform: scale(1.05);
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25); 
 }
 
 #projets h3 {
-  margin-bottom: 50px; /* Espace entre le titre et les projets */
+  margin-bottom: 50px; 
   font-weight: 800;
   font-family: 'Space Mono', monospace;
   font-size: 3em;
@@ -547,15 +585,15 @@ a:hover, .droit-footer:hover {
 
 .projet-thumbnail {
   width: 100%;
-  height: 100%;  /* Permet à l'image de prendre toute la hauteur du conteneur */
+  height: 100%; 
   overflow: hidden; /* Empêche l'image de dépasser du cadre */
   display: flex;
 }
 
 .projet-thumbnail img {
   width: 100%;
-  height: 90%; /* L'image prend toute la hauteur du conteneur */
-  object-fit: cover; /* Assure que l'image couvre tout l'espace sans déformation */
+  height: 90%;
+  object-fit: cover;
 }
 
 .projet-contenu {
@@ -567,7 +605,7 @@ a:hover, .droit-footer:hover {
 @media (max-width: 768px) {
   .projets-grid {
     grid-template-columns: 1fr; /* Affiche une seule colonne sur mobile */
-    gap: 15px; /* Réduit l'espacement entre les projets sur mobile */
+    gap: 15px; 
   }
 
   .projet {
@@ -585,7 +623,7 @@ a:hover, .droit-footer:hover {
   display: none; /* Masque la modale au début */
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Augmenter le z-index pour être sûr que la modale est au-dessus */
+  z-index: 9999; 
   top: 0;
   left: 0;
 }
@@ -607,13 +645,13 @@ form label {   /* style couleur texte label */
 /* Style de la modale */
 .popup-contact {
   background: white;
-  width: 90%; /* Plus large pour mobile */
-  max-width: 600px; /* Limite la largeur maximale */
+  width: 90%; 
+  max-width: 600px;
   height: auto;
   overflow: auto;
   position: relative;
   border: 5px solid #000;
-  padding: 20px; /* Ajouter du padding pour espacer le contenu */
+  padding: 20px; 
   box-sizing: border-box;
 }
 
@@ -626,7 +664,7 @@ form label {   /* style couleur texte label */
 }
 
 .popup-img {
-  width: 120px; /* Taille légèrement agrandie */
+  width: 120px; 
 }
 
 .popup-details {
@@ -641,6 +679,7 @@ form label {   /* style couleur texte label */
   padding: 10px;
   margin-bottom: 10px;
 }
+
 /*bouton contact*/
 .wpcf7-submit {
   width: 100%;
@@ -659,7 +698,7 @@ form label {   /* style couleur texte label */
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #F56E28;  /* Orange */
+  background-color: #F56E28;  
   color: #fff;
   border: none;
   font-size: 24px;
@@ -671,8 +710,8 @@ form label {   /* style couleur texte label */
 
 /* Effet au survol */
 .close-btn:hover {
-  background-color: #e64a19;  /* Fond orange plus foncé */
-  transform: scale(1.2); /* Agrandissement au survol */
+  background-color: #e64a19;  
+  transform: scale(1.2); 
 }
 
 .close-btn:focus {
@@ -699,7 +738,7 @@ form label {   /* style couleur texte label */
 /*---________MENU BURGER---_________*/
 
 .burger-menu {
-  display: none; /* Masqué par défaut */
+  display: none; 
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
@@ -786,7 +825,7 @@ form label {   /* style couleur texte label */
   }
 
   .main-nav ul li a:hover {
-    color: #e0e0e0; /* Légère modification de la couleur au survol */
+    color: #e0e0e0; 
   }
 }
 
@@ -794,9 +833,9 @@ form label {   /* style couleur texte label */
 
 .cube-container {
   position: absolute;
-  top: 150%; /* Positionne le cube dans la section */
+  top: 180%; /* Positionne le cube dans la section */
   left: 5%; 
-  width: 250px; /* Taille du cube */
+  width: 250px; 
   height: 250px;
   perspective: 500px;
   z-index: 10;
@@ -808,7 +847,7 @@ form label {   /* style couleur texte label */
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  animation: rotateCube 10s infinite linear; /* Animation infinie */
+  animation: rotateCube 10s infinite linear; 
   transition: transform 0.1s ease-out; 
 }
 
@@ -824,7 +863,7 @@ form label {   /* style couleur texte label */
 }
 
 .face i {
-  font-size: 40px;  /* Ajuste la taille des icônes */
+  font-size: 40px;  
   color: white;
 }
 
@@ -859,11 +898,11 @@ form label {   /* style couleur texte label */
 
 @media (max-width: 1024px) {
   .cube-container {
-    width: 200px; /* Réduire la taille du cube sur tablette */
+    width: 200px; 
     height: 200px;
-    position: relative; /* Modifier la position du cube */
-    margin-top: -350px; /* Remonter le cube, ajustez cette valeur */
-    display: block; /* Assurez-vous que le cube soit visible sur les tablettes */
+    position: relative;
+    margin-top: -350px; 
+    display: block;
   }
 }
 
@@ -875,35 +914,34 @@ form label {   /* style couleur texte label */
   right: 20px;   
   font-size: 1.5rem;
   background-color: #F56E28; 
-  color: white;  /* Couleur de l'icône */
+  color: white;  
   padding: 10px;
   border-radius: 50%;
-  display: none; /* Cache la flèche au début */
+  display: none;
   z-index: 999;  
   cursor: pointer;
 }
 
 /* Effet au survol */
 .scroll-to-top:hover {
-  background-color: #0b475f; /* Change la couleur de la flèche au survol */
+  background-color: #0b475f; 
 }
 
 @media (max-width: 768px) {
   .scroll-to-top {
-    display: none !important;  /* Masque la flèche sur les écrans de moins de 768px */
+    display: none !important;  
   }
 }
-
 
 /*---_________LIGHTBOX---__________ */
 
 .lightbox {
   display: none;
-  position: fixed; /* Positionnement fixe par rapport à l'écran */
-  top: 50%; /* Positionne au centre de la page */
-  left: 50%; /* Positionne au centre de la page */
-  transform: translate(-50%, -50%); /* Déplace l'élément vers le centre */
-  background-color: #0b475f;
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: #062c3b;
   width: 80%;
   max-width: 800px;
   padding: 20px;
@@ -926,14 +964,14 @@ form label {   /* style couleur texte label */
   color: #fff;
   cursor: pointer;
   background-color: #e37814;
-  border-radius: 50%; /* Rend l'élément circulaire */
+  border-radius: 50%;
   width: 40px; 
   height: 40px; 
 }
 
 .lightbox .close:hover {
-  transform: scale(1.1); /* Agrandissement léger de 10% */
-  transition: transform 0.3s ease; /* Animation fluide */
+  transform: scale(1.1); 
+  transition: transform 0.3s ease; 
 }
 
 
@@ -955,7 +993,7 @@ form label {   /* style couleur texte label */
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6); /* Fond sombre avec un peu de transparence */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -969,19 +1007,21 @@ form label {   /* style couleur texte label */
   visibility: visible;
 }
 
-.btn-en-savoir-plus, .btn-github {
+.btn-en-savoir-plus, .btn-github, .btn-site {
   background-color: #0b475f;
   color: #fff;
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
-  margin: 5px;
+  margin: 10px;
 }
 
-.btn-en-savoir-plus:hover, .btn-github:hover {
+.btn-en-savoir-plus:hover, .btn-github:hover, .btn-site:hover {
   text-decoration: none;
   background-color: #e37814;
-  transform: scale(1.1); /* Agrandissement de 10% */
-  transition: transform 0.3s ease; /* Ajoute une transition douce */
+  transform: scale(1.1); 
+  transition: transform 0.3s ease; 
 }
+
+/* ________________FIN POUR L'INSTANT_______________*/
 

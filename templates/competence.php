@@ -1,6 +1,7 @@
 <section class="skills">
-  <h2 class="fade-in-title">Mes compétences</h2>
-  
+  <div class="content-text rectangle2">
+    <h2 class="fade-in-title">Mes compétences</h2>
+  </div>
   <div class="skills-container">
     <!-- Cube à gauche -->
     <div class="cube-section">
@@ -18,7 +19,7 @@
 
     <!-- Texte au centre -->
     <div class="text-section">
-      <p>Formation de 9 mois en développement WordPress, où j'ai appris à créer des sites personnalisés et interactifs en utilisant des technologies telles que JavaScript. J'ai également intégré des pratiques de green code pour minimiser l'impact énergétique des sites, tout en acquérant une vision complète du développement web.</p>
+      <p>Grâce à ma formation, j'ai acquis une solide maîtrise des technologies web telles que JavaScript, AJAX et PHP, me permettant d'intégrer des fonctionnalités dynamiques et interactives sur des sites WordPress. J'applique également des pratiques de green coding pour optimiser la performance et réduire l'empreinte énergétique des sites que je développe.</p>
     </div>
 
     <!-- Toolbox à droite avec les compétences -->

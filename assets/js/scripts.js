@@ -1,23 +1,25 @@
 
-// EFFET A PROPOS______________________________________________
+// EFFET TITRE______________________________________________
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Sélectionner l'élément "À propos de moi" (h2 avec la classe .a-propos)
-    const target = document.querySelector(".a-propos"); // Sélectionner le h2 avec la classe .a-propos
+  // Sélectionner tous les éléments avec la classe 'fade-in-title'
+  const targets = document.querySelectorAll(".fade-in-title"); // Sélectionner tous les h2 avec la classe fade-in-title
 
-    // Créer l'observateur
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Ajouter la classe 'animate' uniquement lorsque l'élément devient visible
-                entry.target.classList.add("animate");
-                observer.unobserve(entry.target); // Arrêter l'observation après l'activation de l'animation
-            }
-        });
-    }, { threshold: 0.9 }); // Observer l'élément quand seulement 10% de la section est visible
+  // Créer l'observateur
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              // Ajouter la classe 'animate' uniquement lorsque l'élément devient visible
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target); // Arrêter l'observation après l'activation de l'animation
+          }
+      });
+  }, { threshold: 0.3 }); // Observer l'élément quand seulement 90% de la section est visible
 
-    // Commencer à observer l'élément
-    observer.observe(target);
+  // Commencer à observer chaque élément
+  targets.forEach(target => {
+      observer.observe(target);
+  });
 });
 
 
